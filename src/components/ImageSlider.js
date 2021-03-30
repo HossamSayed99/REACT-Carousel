@@ -10,7 +10,6 @@ const ImageSlider = ({slides}) =>
 
 
         const nextSlide = () => {
-            console.log('next slide');
             setCurrent((current+1) % length);
         }
         const prevSlide = () =>{
@@ -66,26 +65,26 @@ const ImageSlider = ({slides}) =>
 
         return (
             <section className='slider'>
-                <button className=' glyphicon glyphicon-menu-left left-arrow' onClick={prevSlide} />
-                <button  className=' glyphicon glyphicon-menu-right right-arrow' onClick={nextSlide} />
                 <div className='nav_bar'>
                 {SliderData.map((slide, index) => {
                         if(index === current){
                             return (
-                                <button type="button" className = 'btn btn-light active '
+                                <button type="button" className = 'btn btn-light active' onClick = {() => setCurrent(index)}
                                             key = {index}
                                 >{index + 1}</button>
                             );
                         }
                         else{
                             return (
-                                <button type="button" className = 'btn btn-light'
+                                <button type="button" className = 'btn btn-light' onClick = {() => setCurrent(index)}
                                             key = {index}
                                 >{index + 1}</button>
                             );
                         }
                 })}
                 </div>
+                <button className=' glyphicon glyphicon-menu-left left-arrow' onClick={prevSlide} />
+                <button  className=' glyphicon glyphicon-menu-right right-arrow' onClick={nextSlide} />
                 {SliderData.map((slide, index) => {
                         return (
                         <div
