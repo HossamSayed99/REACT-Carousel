@@ -59,27 +59,46 @@ const ImageSlider = ({slides}) =>
                 xDown = null;
                 yDown = null;                                             
         };
-        
+
 
         if(!Array.isArray(slides) || slides.length <= 0)
             return;
 
         return (
             <section className='slider'>
-            <button className=' glyphicon glyphicon-menu-left left-arrow' onClick={prevSlide} />
-            <button  className=' glyphicon glyphicon-menu-right right-arrow' onClick={nextSlide} />
-            {SliderData.map((slide, index) => {
-                return (
-                <div
-                    className={index === current ? 'slide active' : 'slide'}
-                    key={index}
-                >
-                    {index === current && (
-                    <img src={slide.image} alt='travel image' className='image' />
-                    )}
+                <button className=' glyphicon glyphicon-menu-left left-arrow' onClick={prevSlide} />
+                <button  className=' glyphicon glyphicon-menu-right right-arrow' onClick={nextSlide} />
+                <div className='nav_bar'>
+                {SliderData.map((slide, index) => {
+                        if(index === current){
+                            return (
+                                <button type="button" className = 'btn btn-light active '
+                                            key = {index}
+                                >{index + 1}</button>
+                            );
+                        }
+                        else{
+                            return (
+                                <button type="button" className = 'btn btn-light'
+                                            key = {index}
+                                >{index + 1}</button>
+                            );
+                        }
+                })}
                 </div>
-                );
-            })}
+                {SliderData.map((slide, index) => {
+                        return (
+                        <div
+                            className={index === current ? 'slide active' : 'slide'}
+                            key={index}
+                        >
+                            <div 
+                                style={{backgroundImage: "url("+slide.image+")"}} alt='Random Image' className='image'>
+                            </div>
+                        </div>
+                        );
+                    })}
+                
             </section>
         );
     }

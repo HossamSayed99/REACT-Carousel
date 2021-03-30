@@ -9,7 +9,7 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <h1> Hello, SCANDIWEB </h1>
+        <h1 className="headline"> Hello, SCANDIWEB </h1>
         <ImageSlider slides = {SliderData}></ImageSlider>
       </div>
     );
