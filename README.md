@@ -32,5 +32,5 @@ These are the resources which I have mainly used to make this component possible
 *   Making the pictures resize automatically to the screen size. I beleive using this could be made using media queries.
   
 
-## Finl thoughts
+## Final thoughts
 In this task, I have spent more time with tweaking the front end that finishing the logic of the carrousel (which has nearly no logic to be fair). I have got a fair idea of REACT and how its development methodology is different in terms of dividing everything into components. I have also read about some features like react hooks.
